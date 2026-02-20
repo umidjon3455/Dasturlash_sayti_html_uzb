@@ -39,3 +39,21 @@ def uzb_page(request):
     }
 
     return render(request, "news/uzb.html", context=context)
+
+def jahon_page(request):
+    news_list = News.objects.filter(status=News.Status.Published)
+
+    context = {
+        'news_list': news_list
+    }
+
+    return render(request, "news/single.html", context=context)
+
+def school_page(request):
+    news_list = News.objects.filter(status=News.Status.Published)
+
+    context = {
+        'news_list': news_list
+    }
+
+    return render(request, "news/contact.html", context=context)
